@@ -23,10 +23,14 @@ import plotly.express as px
 data_impor = pd.read_csv('2-pie & donut chart/data/impor perikanan.csv')
 colors = ['gold', 'mediumturquoise', 'darkorange']
 
-fig = px.pie(data_impor, values='volume_impor', names='komoditas', hole=0.5,
+fig = px.pie(data_impor, values='volume_impor',
+  names='komoditas', hole=0.5,
   title="Volume Impor Hasil Perikanan (Ton) Tahun 2018")
+  
 fig.update_traces(textposition='auto', textinfo='percent+label+value', 
-                  marker=dict(colors=colors, line=dict(color='#000000', width=2)))
+  marker=dict(colors=colors, 
+  line=dict(color='#000000', width=2)))
+  
 fig.update_layout(showlegend=False)
 fig.show()
 
