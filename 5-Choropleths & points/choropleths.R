@@ -5,12 +5,12 @@ indo_geo <- readOGR("5-Choropleths & points/data/covid_shapes.geojson")
 
 kemiskinan <- read_csv("5-Choropleths & points/data/persentase penduduk miskin.csv")
 
-indo_geo@data
-
 indo_geo@data <- inner_join(indo_geo@data, kemiskinan, by="provinsi")
 
-bins <- c(0, 3, 9, 12, 15)
-pal <- colorBin("YlOrRd", domain = indo_geo@data$`persentase penduduk miskin`, bins = bins)
+bins <- c(0, 4, 8, 12, 16)
+pal <- colorBin("YlOrRd", 
+                domain = indo_geo@data$`persentase penduduk miskin`, 
+                bins = bins)
 
 labels <- sprintf(
   "<strong>%s</strong><br/> Penduduk Miskin %g persen",
