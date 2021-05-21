@@ -1,10 +1,8 @@
-library(maps)
 library(geosphere)
 library(rgdal)
 library(dplyr)
 
-peta_ind <- readOGR("/home/ashari/Documents/Project/data-vis-koding/5-Choropleths & points/data/covid_shapes.geojson")
-
+peta_ind <- readRDS("7-datavis/data/gadm36_IDN_0_sp.rds")
 data_penerbangan <- read.csv("7-datavis/data/data penerbangan sultan hasanuddin.csv")
 koordinat_bandara <- read.csv("7-datavis/data/koordinat bandara.csv")
 
@@ -18,6 +16,7 @@ data_penerbangan <- inner_join(data_penerbangan, koordinat_bandara,
 #plot(peta_ind)
 plot(peta_ind,  fill=T, col="grey8", bg="grey15")
 #overlay airports
+points(koordinat_upg$longitude,koordinat_upg$latitude, pch=3, cex=1, col="chocolate1")
 points(data_penerbangan$longitude,data_penerbangan$latitude, pch=3, cex=0.1, col="chocolate1")
 
 #
