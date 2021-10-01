@@ -49,7 +49,8 @@ ggplot() +
           fill = "yellow",
           size = 2,
           shape = 21) +
-  labs(x = "", y = "")
+  labs(x = "", y = "") +
+  theme_void()
 
 leaflet(streets$osm_lines) %>% 
   addTiles() %>% 
