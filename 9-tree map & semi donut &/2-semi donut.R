@@ -88,7 +88,7 @@ parlDiag <- function(Parties, shares, cols = NULL, repr=c("absolute", "proportio
 
 bt <- data.frame(parties = c("<SD", "SMP", "SMA/K", "Diploma", "PT"),
                  seats   = c(3.61, 6.45, 20.22, 5.87, 5.98),
-                 cols    = c("green", "blue", "red", "lightblue", "yellow"),
+                 cols    = c("#FF6543", "#FFA022", "#FFBE12", "#FFDB01", "#fff192"),
                  stringsAsFactors = FALSE)
 
 parlDiag(bt$parties, bt$seats, cols = bt$cols)
